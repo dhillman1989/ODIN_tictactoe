@@ -1,0 +1,24 @@
+body {
+  background-color: rgb(39, 0, 0);
+  color: #fff;
+}
+
+.gameBoard {
+  width: 600px;
+  max-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  &__square {
+    box-sizing: border-box;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 1);
+    height: (200px);
+    width: (200px);
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

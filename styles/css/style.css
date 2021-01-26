@@ -1,0 +1,35 @@
+body {
+  background-color: #270000;
+  color: #fff;
+}
+
+.gameBoard {
+  width: 600px;
+  max-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.gameBoard__square {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: black;
+  border: 1px solid white;
+  height: 200px;
+  width: 200px;
+  font-size: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/*# sourceMappingURL=style.css.map */
