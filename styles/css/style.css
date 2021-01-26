@@ -1,6 +1,17 @@
 body {
   background-color: #270000;
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  font-family: arial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .gameBoard {
@@ -31,5 +42,17 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.win-notice {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  font-size: 32px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 /*# sourceMappingURL=style.css.map */
