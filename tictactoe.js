@@ -2,6 +2,8 @@ let gameActive = true;
 
 //player model
 const player = (name, marker) => {
+  let playerName = name;
+  let changePlayerName = (newName) => (playerName = newName);
   let mySquares = [];
   let winStatus = false;
   const checkWin = () => {
@@ -11,9 +13,8 @@ const player = (name, marker) => {
       }
     });
     if (winStatus === true) {
-      console.log(mySquares, gameBoard.winningPlays);
       gameActive = false;
-      let message = `Congratulations, ${name}`;
+      let message = `Congratulations, ${playerName.toString()}`;
       winStatus = false;
       return congratulate(message);
     } else if (!gameBoard.state.some((pos) => pos === "")) {
@@ -39,13 +40,19 @@ const player = (name, marker) => {
     currPlayer = currPlayer === 1 ? 2 : 1;
   };
 
-  return { turn, name, marker, mySquares, winStatus };
+  return { turn, playerName, changePlayerName, marker, mySquares, winStatus };
 };
 
-///create players
-const player1 = player(prompt("Player 1 Name"), "X");
+///create players / name controllers
 
-const player2 = player(prompt("Player 2 Name"), "O");
+const player1 = player(document.getElementById("player1name").value, "X");
+const player2 = player(document.getElementById("player2name").value, "O");
+document.getElementById("player1name").onchange = (e) => {
+  player1.changePlayerName(e.target.value);
+};
+document.getElementById("player2name").onchange = (e) => {
+  player2.changePlayerName(e.target.value);
+};
 
 ///board controller
 const gameBoard = (() => {
@@ -72,7 +79,7 @@ const gameBoard = (() => {
     [6, 4, 2],
     [0, 3, 6],
     [1, 4, 7],
-    [2, 5, 9],
+    [2, 5, 8],
   ];
   const buildBoard = () => {
     let board = "";
